@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--
+    <item android:id="@+id/action_github"
+        android:title="action_github"
+        android:icon="@drawable/ic_launcher"
+        app:showAsAction="ifRoom" />
+        -->
+ <!--   <item
+        android:id="@+id/app_menu"
+        android:title="菜单"
+        android:icon="@drawable/icon"
+        app:showAsAction="ifRoom">
+        <menu>-->
+
+            <item
+                app:showAsAction="never"
+                android:id="@+id/exit_current"
+                android:title="@string/exit_account" />
+            <item
+                android:id="@+id/exit_app"
+                app:showAsAction="never"
+                android:title="@string/exit_qq" />
+
+<!--        </menu>
+    </item>-->
+</menu>

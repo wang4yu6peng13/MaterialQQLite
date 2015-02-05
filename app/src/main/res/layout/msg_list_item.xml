@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_height_content"
+    android:background="@drawable/group_list_subitem_style"
+    android:descendantFocusability="blocksDescendants"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="72dp"
+        android:layout_height="wrap_content">
+
+
+
+        <ImageView
+            android:id="@+id/msglistitem_imgAvatar"
+   style="@style/Avatar"
+            android:contentDescription="@string/app_name"
+            android:focusable="false"
+            android:layout_gravity="center_vertical" />
+        <TextView
+            android:id="@+id/msglistitem_txtUnreadMsgCnt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/skin_list_newmessage2"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/unreadmsgcnt_textsize" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:descendantFocusability="blocksDescendants"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/msglistitem_txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@color/color_primary_text"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/msglistitem_txtDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/msglistitem_txtName"
+            android:layout_marginRight="42dp"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:gravity="bottom"
+            android:minHeight="20dp"
+            android:singleLine="true"
+            android:textColor="@color/color_secondary_text"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/msglistitem_txtTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:singleLine="true"
+            android:textColor="@drawable/btn_color3"
+            android:textSize="13sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

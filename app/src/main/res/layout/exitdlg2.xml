@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:background="@drawable/common_alert_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/exitdlg2_txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/exitdlg2_exit"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/exitdlg2_txtMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:gravity="left|center_vertical"
+        android:text="@string/exitdlg2_confirm"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <CheckBox
+        android:id="@+id/exitdlg2_cboStillRecvMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:button="@drawable/checkbox_style2"
+        android:text="@string/exitdlg2_stillrecvmsg"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#BBBBBB" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/exitdlg2_btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_style21"
+            android:text="@string/exitdlg2_cancel"
+            android:textColor="#0079FF"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#BBBBBB" />
+
+        <Button
+            android:id="@+id/exitdlg2_btnOk"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_style22"
+            android:text="@string/exitdlg2_ok"
+            android:textColor="#0079FF"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

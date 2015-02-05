@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--
+    <item android:id="@+id/action_github"
+        android:title="action_github"
+        android:icon="@drawable/ic_launcher"
+        app:showAsAction="ifRoom" />
+        -->
+ <!--   <item
+        android:id="@+id/app_menu"
+        android:title="菜单"
+        android:icon="@drawable/icon"
+        app:showAsAction="ifRoom">
+        <menu>-->
+            <item
+
+                app:showAsAction="always"
+                android:id="@+id/ok"
+                android:icon="@drawable/ic_done_white_48dp"
+                android:title="@string/finish"/>
+
+
+<!--        </menu>
+    </item>-->
+</menu>

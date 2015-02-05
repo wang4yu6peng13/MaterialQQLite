@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:widget="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <com.material.widget.CircularProgress
+        android:id="@+id/progress_circular_login"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        widget:circular_progress_color="@color/color_accent"
+        widget:circular_progress_size="Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <!--    <ProgressBar
+            android:id="@+id/loading_img"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:contentDescription="@string/app_name"
+            android:indeterminateDrawable="@drawable/pessbar_anim" />
+
+        <TextView
+            android:id="@+id/loading_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/loading"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+    -->
+</LinearLayout>

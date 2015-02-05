@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="D:\Program Files\Android\Project\MaterialQQLite\switchButton\src\main\res"><file name="md_back_off" path="D:\Program Files\Android\Project\MaterialQQLite\switchButton\src\main\res\drawable\md_back_off.xml" qualifiers="" type="drawable"/><file name="md_back_on" path="D:\Program Files\Android\Project\MaterialQQLite\switchButton\src\main\res\drawable\md_back_on.xml" qualifiers="" type="drawable"/><file name="md_switch_thumb_disable" path="D:\Program Files\Android\Project\MaterialQQLite\switchButton\src\main\res\drawable\md_switch_thumb_disable.png" qualifiers="" type="drawable"/><file name="md_switch_thumb_off_normal" path="D:\Program Files\Android\Project\MaterialQQLite\switchButton\src\main\res\drawable\md_switch_thumb_off_normal.png" qualifiers="" type="drawable"/><file name="md_switch_thumb_off_pressed" path="D:\Program Files\Android\Project\MaterialQQLite\switchButton\src\main\res\drawable\md_switch_thumb_off_pressed.png" qualifiers="" type="drawable"/><file name="md_switch_thumb_on_normal" path="D:\Program Files\Android\Project\MaterialQQLite\switchButton\src\main\res\drawable\md_switch_thumb_on_normal.png" qualifiers="" type="drawable"/><file name="md_switch_thumb_on_pressed" path="D:\Program Files\Android\Project\MaterialQQLite\switchButton\src\main\res\drawable\md_switch_thumb_on_pressed.png" qualifiers="" type="drawable"/><file name="md_thumb" path="D:\Program Files\Android\Project\MaterialQQLite\switchButton\src\main\res\drawable\md_thumb.xml" qualifiers="" type="drawable"/><file name="ic_launcher" path="D:\Program Files\Android\Project\MaterialQQLite\switchButton\src\main\res\drawable-hdpi\ic_launcher.png" qualifiers="hdpi-v4" type="drawable"/><file name="ic_launcher" path="D:\Program Files\Android\Project\MaterialQQLite\switchButton\src\main\res\drawable-mdpi\ic_launcher.png" qualifiers="mdpi-v4" type="drawable"/><file name="ic_launcher" path="D:\Program Files\Android\Project\MaterialQQLite\switchButton\src\main\res\drawable-xhdpi\ic_launcher.png" qualifiers="xhdpi-v4" type="drawable"/><file path="D:\Program Files\Android\Project\MaterialQQLite\switchButton\src\main\res\values\attrs.xml" qualifiers=""><declare-styleable name="SwitchButton">
+        <attr format="reference" name="onDrawable"/>
+        <attr format="reference" name="offDrawable"/>
+        <attr format="reference" name="thumbDrawable"/>
+        <attr format="dimension|reference" name="thumb_margin"/>
+        <attr format="dimension|reference" name="thumb_marginTop"/>
+        <attr format="dimension|reference" name="thumb_marginBottom"/>
+        <attr format="dimension|reference" name="thumb_marginLeft"/>
+        <attr format="dimension|reference" name="thumb_marginRight"/>
+        <attr format="dimension|reference" name="thumb_width"/>
+        <attr format="dimension|reference" name="thumb_height"/>
+        <attr format="color|reference" name="onColor"/>
+        <attr format="color|reference" name="offColor"/>
+        <attr format="color|reference" name="thumbColor"/>
+        <attr format="color|reference" name="thumbPressedColor"/>
+        <attr format="integer" name="animationVelocity"/>
+        <attr format="integer" name="radius"/>
+        <attr format="float" name="measureFactor"/>
+        <attr format="dimension|reference" name="insetLeft"/>
+        <attr format="dimension|reference" name="insetRight"/>
+        <attr format="dimension|reference" name="insetTop"/>
+        <attr format="dimension|reference" name="insetBottom"/>
+    </declare-styleable></file><file path="D:\Program Files\Android\Project\MaterialQQLite\switchButton\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">SwitchButton</string></file><file path="D:\Program Files\Android\Project\MaterialQQLite\switchButton\src\main\res\values\styles.xml" qualifiers=""><style name="MD">
+        <item name="animationVelocity">6</item>
+        <item name="insetBottom">16dp</item>
+        <item name="insetTop">16dp</item>
+        <item name="insetLeft">16dp</item>
+        <item name="insetRight">16dp</item>
+        <item name="measureFactor">1.4</item>
+        <item name="offDrawable">@drawable/md_back_off</item>
+        <item name="onDrawable">@drawable/md_back_on</item>
+        <item name="thumbDrawable">@drawable/md_thumb</item>
+        <item name="thumb_margin">-17dp</item>
+    </style><style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style><style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style></file></source><source path="D:\Program Files\Android\Project\MaterialQQLite\switchButton\build\generated\res\rs\release"/><source path="D:\Program Files\Android\Project\MaterialQQLite\switchButton\build\generated\res\generated\release"/></dataSet><dataSet config="release"><source path="D:\Program Files\Android\Project\MaterialQQLite\switchButton\src\release\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="SwitchButton"><attr format="reference" name="onDrawable"/><attr format="reference" name="offDrawable"/><attr format="reference" name="thumbDrawable"/><attr format="dimension|reference" name="thumb_margin"/><attr format="dimension|reference" name="thumb_marginTop"/><attr format="dimension|reference" name="thumb_marginBottom"/><attr format="dimension|reference" name="thumb_marginLeft"/><attr format="dimension|reference" name="thumb_marginRight"/><attr format="dimension|reference" name="thumb_width"/><attr format="dimension|reference" name="thumb_height"/><attr format="color|reference" name="onColor"/><attr format="color|reference" name="offColor"/><attr format="color|reference" name="thumbColor"/><attr format="color|reference" name="thumbPressedColor"/><attr format="integer" name="animationVelocity"/><attr format="integer" name="radius"/><attr format="float" name="measureFactor"/><attr format="dimension|reference" name="insetLeft"/><attr format="dimension|reference" name="insetRight"/><attr format="dimension|reference" name="insetTop"/><attr format="dimension|reference" name="insetBottom"/></declare-styleable></configuration></mergedItems></merger>

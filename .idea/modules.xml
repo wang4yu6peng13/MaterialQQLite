@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MaterialQQLite.iml" filepath="$PROJECT_DIR$/MaterialQQLite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MaterialWidget/MaterialWidget.iml" filepath="$PROJECT_DIR$/MaterialWidget/MaterialWidget.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-PullRefreshLayout/android-PullRefreshLayout.iml" filepath="$PROJECT_DIR$/android-PullRefreshLayout/android-PullRefreshLayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/switchButton/switchButton.iml" filepath="$PROJECT_DIR$/switchButton/switchButton.iml" />
+    </modules>
+  </component>
+</project>
+

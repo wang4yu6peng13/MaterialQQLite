@@ -1,0 +1,85 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/skin_chat_background"
+    android:orientation="vertical">
+    <!--
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/skin_header_bar_bg" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:textColor="#0079FF"
+                android:text="@string/manage"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="158dp"
+                android:layout_height="38dp"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/contacts_btnBuddyTeam"
+                android:contentDescription="@string/app_name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/team"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:background="@drawable/skin_header_tab_left_pressed" />
+
+            <Button
+                android:id="@+id/contacts_btnAllBuddy"
+                android:contentDescription="@string/app_name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/all"
+                android:textColor="#0079FF"
+                android:textSize="14sp"
+                android:background="@drawable/skin_header_tab_right_normal" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnAddContact"
+                android:contentDescription="@string/app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/btn_style3" />
+        </RelativeLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshExpandableListView xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/expandableListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrHeaderBackground="#353535"
+        ptr:ptrHeaderSubTextColor="@android:color/white"
+        ptr:ptrHeaderTextColor="@android:color/white" />
+    -->
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/swipeRefreshLayout_friend"
+        app:type="water_drop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ExpandableListView
+            android:id="@+id/expandableListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+
+            />
+    </com.baoyz.widget.PullRefreshLayout>
+</LinearLayout>

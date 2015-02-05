@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blur_bg">#FFFAF0</color>
+    <color name="black">#000000</color>
+    <color name="grey">#808080</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#ff0000</color>
+    <color name="blue">#0079FF</color>
+    <color name="transparent">#7f000000</color>
+    
+    
+    <color name="user_detail_public_bg">#f3f3f3</color>
+    <color name="user_list_public_bg">#e5e6e7</color>
+    <color name="normal_text">#FF758493</color>
+    <!-- 2012-12-26 字体颜色统一  廖乃波 -->
+    <color name="text_color_shenhui_677582">#677582</color>
+    <color name="text_color_qianhui_a3a4a4">#a3a4a4</color>
+    <color name="text_color_heise_504f4f">#504f4f</color>
+    <color name="text_color_baise_fffefe">#fffefe</color>
+    <color name="text_color_hongse_ff4318">#ff4318</color>
+    <color name="text_color_zhongheise_461bd4">#461bd4</color>
+    <color name="text_color_zhonghongse_461b04">#461b04</color>
+    <color name="text_color_huangse_ff8800">#ff8800</color>
+    <color name="text_color_shurukuang_aeb6bd">#aeb6bd</color>
+
+    <color name="color_primary">#3f51b5</color>
+    <color name="color_primary_dark">#303f9f</color>
+    <color name="color_primary_light">#c5cae9</color>
+    <color name="color_accent">#3f51b5</color>
+    <color name="color_text_icons">#ffffff</color>
+    <color name="color_primary_text">#212121</color>
+    <color name="color_secondary_text">#727272</color>
+    <color name="color_divider">#b6b6b6</color>
+</resources>

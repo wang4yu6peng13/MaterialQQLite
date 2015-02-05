@@ -1,0 +1,46 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    
+    <dimen name="cyloginingdlg">90dp</dimen>
+    <dimen name="loginingdlg_lr_margin">10dp</dimen>
+    <dimen name="loginingdlg_t_margin">20dp</dimen>
+
+	<dimen name="cyexitdlg">44dp</dimen>
+    <dimen name="exitdlg_lr_margin">8dp</dimen>
+    <dimen name="exitdlg_b_margin">20dp</dimen>
+	
+	<dimen name="unreadmsgcnt_textsize">12sp</dimen>
+
+
+	<dimen name="msgList_cxFace">16dp</dimen>
+	<dimen name="msgList_cyFace">16dp</dimen>
+
+    <dimen name="pxAvatarRound">25dp</dimen>
+    <dimen name="msgList_cxAvatar">50dp</dimen>
+    <dimen name="msgList_cyAvatar">50dp</dimen>
+
+	<dimen name="BList_cxAvatar">50dp</dimen>
+	<dimen name="BList_cyAvatar">50dp</dimen>
+	
+	<dimen name="GList_cxAvatar">50dp</dimen>
+	<dimen name="GList_cyAvatar">50dp</dimen>
+
+	<dimen name="chat_cxAvatar">50dp</dimen>
+	<dimen name="chat_cyAvatar">50dp</dimen>
+			
+	<dimen name="cxFace">30dp</dimen>
+	<dimen name="cyFace">30dp</dimen>
+	<dimen name="cxCFace">100dp</dimen>
+	<dimen name="cyCFace">100dp</dimen>
+	<dimen name="dotLeftMargin">10dp</dimen>
+	<dimen name="dotRightMargin">10dp</dimen>
+	<dimen name="chatPic_RoundPx_L">12dp</dimen>
+	<dimen name="chatPic_RoundPx_S">8dp</dimen>
+
+    <dimen name="list_height_content">72dp</dimen>
+    <dimen name="list_height_title">48dp</dimen>
+</resources>

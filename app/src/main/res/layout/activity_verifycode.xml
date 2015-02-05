@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:widget="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+
+        android:id="@+id/toolbar_verifycode"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_primary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ToolbarQQ" />
+<!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/skin_header_bar_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/vc_txtCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:clickable="true"
+            android:text="@string/cancel"
+            android:textColor="@drawable/btn_color4"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/enter_verifycode"
+            android:textColor="#000000"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/vc_btnFinish"
+            android:layout_width="52dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/btn_style5"
+            android:enabled="false"
+            android:text="@string/finish"
+            android:textColor="@drawable/btn_color4"
+            android:textSize="17sp" />
+    </LinearLayout>
+-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/vc_imgVC"
+            android:layout_width="130dp"
+            android:layout_height="53dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitXY" />
+        <com.material.widget.CircularProgress
+            android:id="@+id/vc_prgLogining"
+            android:layout_gravity="center"
+            widget:circular_progress_color="@color/color_accent"
+            widget:circular_progress_size="Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+<!--
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="@string/change"
+        android:textColor="#616A89"
+        android:textSize="12sp" />
+-->
+
+    <com.material.widget.FloatingEditText
+        android:gravity="center"
+        android:id="@+id/vc_edtVC"
+        style="@style/LoginEditText"
+        android:hint="@string/enter_verifycode"
+        android:inputType="text" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/vc_tips"
+        android:textColor="@color/color_secondary_text"
+        android:textSize="12sp" />
+
+</LinearLayout>

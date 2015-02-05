@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_height_title"
+    android:background="@drawable/group_list_item_style"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/blistitem1_imgArrow"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginLeft="10dp"
+        android:contentDescription="@string/app_name"
+        android:gravity="center_vertical"
+        android:src="@drawable/skin_indicator_unexpanded" />
+
+    <TextView
+        android:id="@+id/blistitem1_txtTeamName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/blistitem1_txtBuddyCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:textColor="#838383"
+        android:textSize="13sp" />
+
+</LinearLayout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:widget="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mat3"
+    android:id="@+id/llbackground"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/login_imgAvatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="90dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/login_default_avatar_login" />
+
+    <LinearLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:orientation="vertical">
+
+            <com.material.widget.FloatingEditText
+                android:id="@+id/login_edtNum"
+                style="@style/LoginEditText"
+                android:hint="@string/idtxthint"
+                android:inputType="number" />
+            <!--
+                            <ImageView
+                                android:id="@+id/login_imgDropdownArrow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="44dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginTop="5dp"
+                                android:contentDescription="@string/app_name"
+                                android:src="@drawable/login_more_up" />-->
+
+            <com.material.widget.FloatingEditText
+                android:id="@+id/login_edtPwd"
+
+                style="@style/LoginEditText"
+                android:hint="@string/pwdtxthint"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.material.widget.PaperButton
+                android:id="@+id/about_btn"
+                android:layout_width="160dp"
+style="@style/PaperButtonLight"
+                android:layout_weight="1"
+                widget:paper_text="@string/aboutandfeedback" />
+
+            <com.material.widget.PaperButton
+                android:id="@+id/login_btnLogin"
+                android:layout_width="160dp"
+style="@style/PaperButtonAccent"
+                android:layout_weight="1"
+                widget:paper_text="@string/loginbtntext"
+/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" />
+    <!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/login_txtForgotPwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/forgot_pwd"
+                android:textColor="#0079FF"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/login_btnNewUser"
+                android:layout_width="67dp"
+                android:layout_height="30dp"
+                android:background="@drawable/button_style2"
+                android:text="@string/new_user"
+                android:textColor="@drawable/btn_color"
+                android:textSize="15sp" />
+        </LinearLayout>
+        -->
+</LinearLayout>

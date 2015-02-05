@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/skin_chat_background"
+    android:orientation="vertical">
+
+    <!--     <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@drawable/skin_header_bar_bg" >
+              <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="#000000"
+                    android:text="@string/msg"
+               android:textSize="17sp" />
+
+                <CheckBox
+                    android:id="@+id/msg_imgLight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:button="@drawable/checkbox_style" />
+
+    </RelativeLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/msg_lvMsg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@null"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:smoothScrollbar="true"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrHeaderBackground="#353535"
+        ptr:ptrHeaderSubTextColor="@android:color/white"
+        ptr:ptrHeaderTextColor="@android:color/white" />
+    -->
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/swipeRefreshLayout_msg"
+        app:type="water_drop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ListView
+        android:id="@+id/msg_lvMsg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@null"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:smoothScrollbar="true"
+ />
+    </com.baoyz.widget.PullRefreshLayout>
+</LinearLayout>

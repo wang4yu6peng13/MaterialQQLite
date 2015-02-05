@@ -1,0 +1,197 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_primary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ToolbarQQ" />
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/main_layMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <it.neokree.materialtabs.MaterialTabHost
+                    android:id="@+id/tabHost"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:accentColor="#80ffffff"
+                    app:hasIcons="true"
+                    app:primaryColor="@color/color_primary" />
+
+                <TextView
+                    android:id="@+id/main_txtUnreadMsgCnt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="1dp"
+                    android:background="@drawable/skin_tab_newmessage2"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="99+"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/unreadmsgcnt_textsize" />
+
+            </FrameLayout>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/drawer_view"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@drawable/skin_chat_background"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/fl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/mat3" />
+
+                <LinearLayout
+                    android:id="@+id/setting_item_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#00ffffff"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_marginTop="32dp"
+                        android:id="@+id/setting_item_imgAvatar"
+                        style="@style/Avatar"
+                        android:layout_height="80dp"
+                        android:layout_width="80dp"
+                        android:layout_gravity="center"
+
+                        android:background="@drawable/h001"
+                        android:contentDescription="@string/app_name" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/setting_item_txtName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/color_primary_text"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/setting_item_imgState"
+                            android:layout_marginLeft="5dp"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/status_online_btn_2"
+                            android:contentDescription="@string/app_name" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/setting_item_txtSign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="个性签名"
+                        android:textColor="@color/color_secondary_text"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_drawer"
+                android:layout_below="@id/fl"
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:textSize="16sp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/qq_Status"
+                    android:textColor="#000000" />
+
+                <com.kyleduo.switchbutton.SwitchButton
+                    android:id="@+id/switch_qqstatus"
+                    style="@style/MaterialDesignStyle"
+                    android:layout_alignParentRight="true"
+                    android:padding="10dp"
+                    android:layout_centerVertical="true"
+                    app:thumb_height="50dp"
+                    app:thumb_width="50dp" />
+            </RelativeLayout>
+            <TextView
+                android:layout_below="@id/rl_drawer"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:textSize="16sp"
+                android:id="@+id/select_color"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:text="@string/color_chooser"
+                android:textColor="#000000" />
+            <TextView
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:textSize="16sp"
+                android:id="@+id/aboutandfeedback_drawer"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:text="@string/aboutandfeedback"
+                android:textColor="#000000" />
+        </RelativeLayout>
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

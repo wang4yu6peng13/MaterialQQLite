@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="NewsListItemTextArray">
+	    <item></item>
+        <item>好友动态</item>
+        <item></item>
+        <item>游戏</item>
+        <item>会员</item>
+        <item>阅读</item>
+        <item>应用宝</item>
+        <item>气泡、主题、表情</item>
+        <item></item>
+        <item>文件/照片助手</item>
+        <item>生活优惠</item>
+        <item>附近的人</item>
+        <item>扫一扫</item>
+        <item></item>
+        <item>腾讯新闻</item>
+        <item></item>
+    </string-array>
+ <!--
+	<string-array name="SettingListItemTextArray">
+	    <item></item>
+        <item>好友昵称</item>
+        <item>我的资料</item>
+        <item>我的相册</item>
+        <item>QQ钱包</item>
+        <item>我的收藏</item>
+        <item></item>
+        <item>个性签名</item>
+        <item></item>
+        <item>消息通知</item>
+        <item>辅助功能</item>
+        <item>安全与隐私</item>
+        <item>设备锁</item>
+        <item></item>
+        <item>关于QQ</item>
+        <item></item>
+    </string-array>
+-->
+    <string-array name="SettingListItemTextArray">
+        <item></item>
+        <item>好友昵称</item>
+
+        <item>@string/qq_Status</item>
+
+    </string-array>
+    <array name="colors">
+        <item>#3F51B5</item>
+        <item>#9E9E9E</item>
+        <item>#424242</item>
+        <item>#1F1F1F</item>
+        <item>#607D8B</item>
+        <item>#795548</item>
+        <item>#D32F2F</item>
+        <item>#E91E63</item>
+        <item>#9C27B0</item>
+        <item>#5E35B1</item>
+        <item>#1E88E5</item>
+        <item>#03A9F4</item>
+        <item>#00BCD4</item>
+        <item>#009688</item>
+        <item>#4CAF50</item>
+        <item>#8BC34A</item>
+        <item>#CDDC39</item>
+        <item>#FFEB3B</item>
+        <item>#FFC107</item>
+        <item>#FF9800</item>
+        <item>#FF5722</item>
+    </array>
+</resources>

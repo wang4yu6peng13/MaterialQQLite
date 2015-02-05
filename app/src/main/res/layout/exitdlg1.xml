@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:background="@drawable/common_alert_bg"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/exitdlg1_bntExit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/btn_style20"
+        android:text="@string/exitdlg1_exit"
+        android:textColor="#0079FF"
+        android:textSize="16sp" />
+
+</LinearLayout>
