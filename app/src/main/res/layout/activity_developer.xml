@@ -14,9 +14,84 @@ android:orientation="vertical"
         android:background="@color/color_primary"
         android:minHeight="?attr/actionBarSize"
         app:theme="@style/ToolbarQQ" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="16dp">
     <TextView
-        android:text="@string/developer_text"
+        android:id="@+id/tv_MingQQ"
+        android:text="MingQQ"
+        android:textColor="@color/color_primary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+<View
+    android:id="@+id/line_mingqq"
+    android:background="@color/color_primary"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"/>
+    <TextView
+        android:text="zmy"
 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="http://zym.cnblogs.com/\nhttp://blog.csdn.net/zym_123456"
+android:autoLink="web"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="16dp">
+        <TextView
+            android:id="@+id/tv_MQQL"
+            android:text="@string/app_name"
+            android:textColor="@color/color_primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+            android:id="@+id/line_mqql"
+            android:background="@color/color_primary"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <TextView
+            android:text="雨棚"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="wang4yu6peng13@qq.com"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="微博 @鹏总V5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="16dp">
+        <TextView
+            android:id="@+id/tv_thanks"
+            android:text="致谢"
+            android:textColor="@color/color_primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+            android:id="@+id/line_thanks"
+            android:background="@color/color_primary"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <TextView
+            android:text="@string/thanks"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 </LinearLayout>

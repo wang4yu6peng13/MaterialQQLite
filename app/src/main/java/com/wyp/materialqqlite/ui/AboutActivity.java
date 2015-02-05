@@ -41,6 +41,8 @@ public class AboutActivity extends ActionBarActivity {
         tintManager.setStatusBarTintEnabled(true);
         tintManager.setStatusBarTintColor(color_theme);
 
+
+        toolbar.setTitle(R.string.aboutandfeedback);
         AboutAdapter adapter = new AboutAdapter(this);
        aboutlist.setAdapter(adapter);
         aboutlist.setOnItemClickListener(new AdapterView.OnItemClickListener() { //为每一个item设置相应的响应

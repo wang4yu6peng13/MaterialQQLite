@@ -26,7 +26,7 @@ public class AboutAdapter extends BaseAdapter {
     }
     @Override
     public int getCount() {
-        return about_list.size();  //条目数量
+        return 4;// about_list.size();  //条目数量
     }
 
     @Override

@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipToPadding="false"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context="com.wyp.materialqqlite.ui.AboutActivity">
@@ -17,9 +16,11 @@
     <ListView android:id="@+id/about_list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:divider="@null"
-        android:listSelector="#00000000"
-        android:cacheColorHint="#00000000">
-    </ListView>
+        android:layout_margin="16dp"
+        android:divider="@null"/>
+   <!--     android:listSelector="#00000000"
+        android:cacheColorHint="#00000000"-->
+
+
 
 </LinearLayout>

@@ -68,7 +68,6 @@
     <string name="crashlog">崩溃日志</string>
     <string name="title_activity_readme">ReadmeActivity</string>
     <string name="title_activity_developer">DeveloperActivity</string>
-    <string name="developer_text">开发者\n\nMingQQ\nzmy\nBlog：\nhttp://zym.cnblogs.com/\nhttp://blog.csdn.net/zym_123456\n
-    \nMaterialQQ Lite\n雨棚\nwang4yu6peng13@qq.com\n\n感谢酷安网友屋子的测试\n\n为了尽早让大家试用app，这些界面先就这样，之后再完善。完善后发布源码。</string>
+    <string name="thanks">感谢酷安网友屋子的测试</string>
 
 </resources>

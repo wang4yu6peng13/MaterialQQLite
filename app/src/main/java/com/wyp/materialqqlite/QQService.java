@@ -29,7 +29,7 @@ public class QQService extends Service {
 	private QQClient m_QQClient;
 	private LoginAccountList m_accountList;
 	private FaceList m_faceList;				// 表情列表
-	private String m_strAppPath;
+	private String m_strAppPath,m_sysPath;
 	private boolean m_bInit;
 	private int m_nNewMsgCnt;
 	
@@ -135,15 +135,18 @@ public class QQService extends Service {
         m_QQClient = AppData.getAppData().getQQClient();
         m_accountList = AppData.getAppData().getLoginAccountList();
         m_faceList = AppData.getAppData().getFaceList();
-        
-        if (FileUtils.hasSDCard()) {
-        	m_strAppPath = FileUtils.getSDCardDir() + "MaterialQQLite/";
-        } else {
-        	m_strAppPath = FileUtils.getAppFilesDir(this);
-        }
+
+     //   m_sysPath=FileUtils.getAppFilesDir(this);
+     //   if (FileUtils.hasSDCard()) {
+    //    	m_strAppPath = FileUtils.getSDCardDir() + "MaterialQQLite/";
+    //    } else {
+     //   	m_strAppPath = FileUtils.getAppFilesDir(this);
+     //   }
+        m_strAppPath = FileUtils.getAppFilesDir(this);
         AppData.getAppData().setAppPath(m_strAppPath);
-                
-        String strFileName = m_strAppPath + "LoginAccountList.dat"; 
+
+        String strFileName = m_strAppPath + "LoginAccountList.dat";
+    //    String strFileName = m_sysPath + "LoginAccountList.dat";
         m_accountList.loadFile(strFileName);
 		
         m_faceList.setDelBtnPicResId(R.drawable.delete_button);

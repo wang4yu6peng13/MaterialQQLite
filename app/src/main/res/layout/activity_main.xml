@@ -143,6 +143,8 @@
             <RelativeLayout
                 android:id="@+id/rl_drawer"
                 android:layout_below="@id/fl"
+                android:gravity="center_vertical"
+android:layout_marginRight="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="70dp">
 
@@ -162,7 +164,8 @@
                     android:id="@+id/switch_qqstatus"
                     style="@style/MaterialDesignStyle"
                     android:layout_alignParentRight="true"
-                    android:padding="10dp"
+                    android:padding="8dp"
+
                     android:layout_centerVertical="true"
                     app:thumb_height="50dp"
                     app:thumb_width="50dp" />

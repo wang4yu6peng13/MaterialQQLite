@@ -15,6 +15,7 @@ import com.wyp.materialqqlite.HomeWatcher;
 import com.wyp.materialqqlite.HomeWatcher.OnHomePressedListener;
 import com.wyp.materialqqlite.R;
 import com.wyp.materialqqlite.SwipeBackActivity;
+import com.wyp.materialqqlite.SwipeBackLayout;
 import com.wyp.materialqqlite.Utils;
 import com.wyp.materialqqlite.qqclient.QQClient;
 import com.wyp.materialqqlite.qqclient.QQUtils;
@@ -35,6 +36,7 @@ import com.wyp.materialqqlite.qqclient.protocol.protocoldata.SessMessage;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -44,6 +46,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v7.app.ActionBarActivity;
@@ -510,11 +513,14 @@ public class ChatActivity extends SwipeBackActivity
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(m_arrFacePageView);
         m_vpFace.setAdapter(adapter);
-
+        
         m_vpFace.setOnPageChangeListener(this);
 
         initDotBar();	// 初始化圆点栏
     }
+
+
+
 
     // 初始化圆点栏
     private void initDotBar() {

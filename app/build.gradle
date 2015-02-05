@@ -15,8 +15,8 @@ android {
         applicationId "com.wyp.materialqqlite"
         minSdkVersion 14
         targetSdkVersion 19
-        versionCode 1
-        versionName "0.1尝鲜版"
+        versionCode 2
+        versionName "0.2尝鲜版"
         signingConfig signingConfigs.signingconfig
     }
     buildTypes {

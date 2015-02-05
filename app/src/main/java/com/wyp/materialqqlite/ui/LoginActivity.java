@@ -89,6 +89,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 
                         String strAppPath = AppData.getAppData().getAppPath();
                         String strFileName = strAppPath + "LoginAccountList.dat";
+
                         accountList.saveFile(strFileName);
 
                         m_QQClient.setNullCallBackHandler(null);

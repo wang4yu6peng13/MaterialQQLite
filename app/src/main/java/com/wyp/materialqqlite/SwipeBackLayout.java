@@ -103,15 +103,15 @@ public class SwipeBackLayout extends FrameLayout {
         switch (event.getAction()) {
             case MotionEvent.ACTION_MOVE:
                 int moveX = (int) event.getRawX();
-                if (moveX - downX >= 0 && Math.abs((int) event.getRawY() - downY) < mTouchSlop) {
+                int deltaX = tempX - moveX;
+                tempX = moveX;
+                if (moveX - downX > mTouchSlop
+                        && Math.abs((int) event.getRawY() - downY) < mTouchSlop) {
                     isSilding = true;
                 }
 
                 if (moveX - downX >= 0 && isSilding) {
-                    System.out.println("finals  " + (downX - moveX));
-                    mContentView.scrollTo(downX - moveX, 0);
-                }else{
-                    mContentView.scrollTo(0, 0);
+                    mContentView.scrollBy(deltaX, 0);
                 }
                 break;
             case MotionEvent.ACTION_UP:
