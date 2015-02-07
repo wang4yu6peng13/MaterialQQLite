@@ -169,7 +169,7 @@ public class LoginActivity extends Activity implements OnClickListener {
         aboutbtn = (PaperButton) findViewById(R.id.about_btn);
 
         llbackground = (LinearLayout) findViewById(R.id.llbackground);
-        llbackground.getBackground().setAlpha(128);
+   //     llbackground.getBackground().setAlpha(128);
 
         m_btnLogin.setColor(color_theme);
         m_edtNum.setNormalColor(color_theme);

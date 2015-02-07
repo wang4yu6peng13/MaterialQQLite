@@ -59,6 +59,7 @@
     <string name="drawer_close">Menu closed</string>
     <string name="aboutandfeedback">关于和反馈</string>
     <string name="qq_Status">隐身/在线</string>
+
     <string name="color_chooser">主题颜色</string>
     <string name="app_name_beta">MaterialQQ Lite尝鲜版</string>
     <string name="title_activity_about">AboutActivity</string>
@@ -68,6 +69,7 @@
     <string name="crashlog">崩溃日志</string>
     <string name="title_activity_readme">ReadmeActivity</string>
     <string name="title_activity_developer">DeveloperActivity</string>
-    <string name="thanks">感谢酷安网友屋子的测试</string>
+    <string name="thanks">感谢微博@大大陈屋子 和酷安网友Soomy提供的部分图标设计\n感谢网友们的测试和建议\n感谢MingQQ的开发者和将来参与开源维护的各位</string>
+    <string name="title_activity_opensource">OpensourceActivity</string>
 
 </resources>

@@ -422,7 +422,7 @@ public class ChatActivity extends SwipeBackActivity
         m_vpFace.setCurrentItem(1);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar_chat);
-        toolbar.setNavigationIcon(R.drawable.icon);
+        toolbar.setNavigationIcon(R.drawable.qqicon);
         toolbar.setTitle(m_txtName);
 
         setSupportActionBar(toolbar);

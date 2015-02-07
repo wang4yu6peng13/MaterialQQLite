@@ -13,11 +13,28 @@
         android:background="@color/color_primary"
         android:minHeight="?attr/actionBarSize"
         app:theme="@style/ToolbarQQ" />
+    <ImageView
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/qqicon" />
+
+    <TextView
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/appname_version"
+        android:layout_gravity="center"
+        android:text="@string/app_name" />
     <ListView android:id="@+id/about_list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_margin="16dp"
-        android:divider="@null"/>
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+android:dividerHeight="1dp"
+        android:headerDividersEnabled="true"
+        android:divider="@color/color_divider"/>
    <!--     android:listSelector="#00000000"
         android:cacheColorHint="#00000000"-->
 

@@ -10,8 +10,8 @@
     <application
         android:name=".CrashApplication"
         android:allowBackup="true"
-        android:icon="@drawable/icon"
-        android:label="@string/app_name_beta"
+        android:icon="@drawable/qqicon"
+        android:label="@string/app_name"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label" >
         <activity
@@ -83,26 +83,34 @@
         <activity
             android:name=".ui.AboutActivity"
             android:configChanges="locale|keyboardHidden|orientation"
+            android:label="@string/title_activity_about"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2"
-            android:windowSoftInputMode="adjustPan"
-            android:label="@string/title_activity_about" >
+            android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
-            android:configChanges="locale|keyboardHidden|orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"
-            android:windowSoftInputMode="adjustPan"
             android:name=".ui.ReadmeActivity"
-            android:label="@string/title_activity_readme" >
+            android:configChanges="locale|keyboardHidden|orientation"
+            android:label="@string/title_activity_readme"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".ui.DeveloperActivity"
+            android:configChanges="locale|keyboardHidden|orientation"
+            android:label="@string/title_activity_developer"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2"
+            android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
             android:configChanges="locale|keyboardHidden|orientation"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2"
             android:windowSoftInputMode="adjustPan"
-            android:name=".ui.DeveloperActivity"
-            android:label="@string/title_activity_developer" >
+            android:name=".ui.OpensourceActivity"
+            android:label="@string/title_activity_opensource" >
         </activity>
     </application>
 

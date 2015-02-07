@@ -105,7 +105,7 @@ public class MainActivity extends ActionBarActivity implements MaterialTabListen
 
     private SharedPreferences sp;
     private int color_theme;
-    private int color_index;
+
     private SystemBarTintManager tintManager;
     private Handler m_Handler = new Handler() {
         @Override
@@ -154,6 +154,7 @@ public class MainActivity extends ActionBarActivity implements MaterialTabListen
         sp=getSharedPreferences("theme",MODE_PRIVATE);
         color_theme=sp.getInt("color",-12627531);
 
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             setTranslucentStatus(true);
         }
@@ -162,6 +163,10 @@ public class MainActivity extends ActionBarActivity implements MaterialTabListen
        tintManager = new SystemBarTintManager(this);
         tintManager.setStatusBarTintEnabled(true);
         tintManager.setStatusBarTintColor(color_theme);
+
+        ThemeSingleton.get().positiveColor = color_theme;
+        ThemeSingleton.get().neutralColor = color_theme;
+        ThemeSingleton.get().negativeColor = color_theme;
 
         ExitApplication.getInstance().addActivity(this);
         initView();
@@ -302,6 +307,8 @@ public class MainActivity extends ActionBarActivity implements MaterialTabListen
                 findViewById(R.id.setting_item_txtSign);
         mToggleSb = (SwitchButton) findViewById(R.id.switch_qqstatus);
 
+    //    switchnotify= (SwitchButton) findViewById(R.id.switch_notify);
+
         m_cxAvatar = (int)getResources().getDimension(R.dimen.msgList_cxAvatar);
         m_cyAvatar = (int)getResources().getDimension(R.dimen.msgList_cyAvatar);
         m_pxAvatarRound = (int)getResources().getDimension(R.dimen.pxAvatarRound);
@@ -386,6 +393,7 @@ public class MainActivity extends ActionBarActivity implements MaterialTabListen
                 }
             }
         });
+
     }
 
     static int selectedColorIndex =-1;//sp.getInt("index",0);//    -1;

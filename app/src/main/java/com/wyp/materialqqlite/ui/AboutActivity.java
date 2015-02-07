@@ -3,6 +3,8 @@ package com.wyp.materialqqlite.ui;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -14,6 +16,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.readystatesoftware.systembartint.SystemBarTintManager;
@@ -24,6 +27,7 @@ public class AboutActivity extends ActionBarActivity {
     private Toolbar toolbar;
     private SharedPreferences sp;
     private int color_theme;
+    private TextView tv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +45,8 @@ public class AboutActivity extends ActionBarActivity {
         tintManager.setStatusBarTintEnabled(true);
         tintManager.setStatusBarTintColor(color_theme);
 
+        tv= (TextView) findViewById(R.id.appname_version);
+        tv.setText(getString(R.string.app_name)+" "+getVersionName());
 
         toolbar.setTitle(R.string.aboutandfeedback);
         AboutAdapter adapter = new AboutAdapter(this);
@@ -55,7 +61,7 @@ public class AboutActivity extends ActionBarActivity {
                         startActivity(ReadmeActivity.class);
                         break;
                     case 1:
-
+                        startActivity(OpensourceActivity.class);
                         break;
                     case 2:
                         startActivity(DeveloperActivity.class);
@@ -83,6 +89,23 @@ public class AboutActivity extends ActionBarActivity {
             winParams.flags &= ~bits;
         }
         win.setAttributes(winParams);
+    }
+
+    private String getVersionName() {
+        try {
+            // 获取packagemanager的实例
+            PackageManager packageManager = getPackageManager();
+            // getPackageName()是你当前类的包名，0代表是获取版本信息
+            PackageInfo packInfo = null;
+
+            packInfo = packageManager.getPackageInfo(getPackageName(), 0);
+            String version = packInfo.versionName;
+            return version;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
+
     }
 }
 

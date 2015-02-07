@@ -143,7 +143,7 @@ public class VerifyCodeActivity extends ActionBarActivity
 		Bitmap bmp = BitmapFactory.decodeByteArray(bytData, 0, bytData.length);
 		m_imgVC.setImageBitmap(bmp);
 
-        toolbar.setNavigationIcon(R.drawable.icon);
+        toolbar.setNavigationIcon(R.drawable.qqicon);
         toolbar.setTitle(getString(R.string.enter_verifycode));
         toolbar.inflateMenu(R.menu.menu_ok);
 

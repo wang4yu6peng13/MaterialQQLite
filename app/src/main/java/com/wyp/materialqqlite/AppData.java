@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.widget.RemoteViews;
 
@@ -24,7 +25,8 @@ public class AppData {
     private String m_strAppPath;
     private Handler m_hService;
     private boolean m_bServiceInit;
-    
+
+
     private AppData() {
     	m_QQClient = new QQClient();
     	m_accoutnList = new LoginAccountList();
@@ -89,19 +91,21 @@ public class AppData {
 				return;
 		}
 
-		int icon = R.drawable.notify_newmessage;
+		int icon = R.drawable.notifyicon;//R.drawable.notify_newmessage;
 		long when = System.currentTimeMillis();
 		
 		if (null == m_notify) {
 			RemoteViews contentView = new RemoteViews(context.getPackageName(),
 					R.layout.notifybar);
 			contentView.setImageViewResource(R.id.notify_icon,
-					R.drawable.icon);
+					R.drawable.qqicon);
 			contentView.setImageViewResource(R.id.notify_smallicon,
-					R.drawable.notify_newmessage);
+					R.drawable.notifyicon);
 			
 			m_notify = new Notification(icon, tickerText, when);
-			m_notify.flags = Notification.FLAG_ONGOING_EVENT | Notification.FLAG_NO_CLEAR;
+			m_notify.flags = Notification.FLAG_ONGOING_EVENT | Notification.FLAG_NO_CLEAR;//常驻
+
+
 
 			m_notify.contentView = contentView;
 			
