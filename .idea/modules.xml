@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/MaterialWidget/MaterialWidget.iml" filepath="$PROJECT_DIR$/MaterialWidget/MaterialWidget.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-PullRefreshLayout/android-PullRefreshLayout.iml" filepath="$PROJECT_DIR$/android-PullRefreshLayout/android-PullRefreshLayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/swipebacklayout/swipebacklayout.iml" filepath="$PROJECT_DIR$/swipebacklayout/swipebacklayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/switchButton/switchButton.iml" filepath="$PROJECT_DIR$/switchButton/switchButton.iml" />
     </modules>
   </component>

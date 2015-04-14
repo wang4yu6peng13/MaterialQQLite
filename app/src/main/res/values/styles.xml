@@ -12,16 +12,8 @@
         -->
     </style>
 
-    <!-- Application theme. -->
-    <style name="AppTheme" parent="android:Theme.Light">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-        <item name="android:windowNoTitle">true</item>
-    </style>
 
-	<style name="AppTheme.NoActionBar" parent="AppBaseTheme">
-		<item name="android:windowActionBar">false</item>
-		<item name="android:windowNoTitle">true</item>
-	</style>
+
 
     <style name="CheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
         <item name="android:button">@drawable/checkbox_style</item>
@@ -71,7 +63,7 @@
     </style>
 
     <style name="ToolbarQQ" parent="ThemeOverlay.AppCompat.ActionBar">
-  <!--      <item name="colorControlNormal">@color/color_text_icons</item>-->
+        <!--      <item name="colorControlNormal">@color/color_text_icons</item>-->
         <item name="android:textColorPrimary">@color/color_text_icons</item>
         <item name="android:itemTextAppearance">@style/menuItemColor</item>
     </style>
@@ -121,6 +113,31 @@
     <style name="AppThemeSwipeBack" parent="AppTheme.Base">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+
+
+    <style name="AppTheme.Translucent" parent="@style/BaseAppTheme.Translucent"/>
+
+    <style name="AppTheme" parent="@style/BaseAppTheme"/>
+
+    <style name="BaseAppTheme.Translucent" parent="BaseAppTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="@style/AppTheme">
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.Translucent" parent="@style/AppTheme.Translucent">
+        <item name="windowActionBar">false</item>
     </style>
 
 </resources>

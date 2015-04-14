@@ -25,7 +25,7 @@ public class AppData {
     private String m_strAppPath;
     private Handler m_hService;
     private boolean m_bServiceInit;
-
+    private JsEngine m_jsEngine;
 
     private AppData() {
     	m_QQClient = new QQClient();
@@ -137,4 +137,12 @@ public class AppData {
 	public void setQQServiceInit(boolean bServiceInit) {
 		m_bServiceInit = bServiceInit;
 	}
+
+    public JsEngine getJsEngine() {
+        return m_jsEngine;
+    }
+
+    public void setJsEngine(JsEngine jsEngine) {
+        m_jsEngine = jsEngine;
+    }
 }

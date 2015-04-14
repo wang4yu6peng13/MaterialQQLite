@@ -10,7 +10,7 @@
     <application
         android:name=".CrashApplication"
         android:allowBackup="true"
-        android:icon="@drawable/qqicon"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label" >
@@ -37,9 +37,9 @@
         <activity
             android:name=".ui.VerifyCodeActivity"
             android:configChanges="locale|keyboardHidden|orientation"
-            android:label="@string/app_name"
+            android:label="@string/enter_verifycode"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"
+            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
@@ -48,14 +48,14 @@
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2" >
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
             android:name=".ui.ChatActivity"
             android:configChanges="locale|keyboardHidden|orientation"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeSwipeBack"
+            android:theme="@style/AppTheme.NoActionBar.Translucent"
             android:windowSoftInputMode="adjustResize" >
         </activity>
         <!--
@@ -84,34 +84,34 @@
         <activity
             android:name=".ui.AboutActivity"
             android:configChanges="locale|keyboardHidden|orientation"
-            android:label="@string/title_activity_about"
+            android:label="@string/aboutandfeedback"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"
+            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
             android:name=".ui.ReadmeActivity"
             android:configChanges="locale|keyboardHidden|orientation"
-            android:label="@string/title_activity_readme"
+            android:label="@string/readme"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"
+            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
             android:name=".ui.DeveloperActivity"
             android:configChanges="locale|keyboardHidden|orientation"
-            android:label="@string/title_activity_developer"
+            android:label="@string/developers"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"
+            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
             android:configChanges="locale|keyboardHidden|orientation"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"
+            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan"
             android:name=".ui.OpensourceActivity"
-            android:label="@string/title_activity_opensource" >
+            android:label="@string/opensource" >
         </activity>
     </application>
 

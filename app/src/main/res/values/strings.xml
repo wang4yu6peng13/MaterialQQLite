@@ -5,7 +5,7 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="qqservice_init_err">初始化QQService失败！</string>
-    <string name="idtxthint">QQ号码/手机/邮箱</string>
+    <string name="idtxthint">QQ号码（暂不支持邮箱）</string>
     <string name="pwdtxthint">密码</string>
     <string name="loginbtntext">登  录</string>
     <string name="forgot_pwd"><u>忘记密码？</u></string>
@@ -69,7 +69,7 @@
     <string name="crashlog">崩溃日志</string>
     <string name="title_activity_readme">ReadmeActivity</string>
     <string name="title_activity_developer">DeveloperActivity</string>
-    <string name="thanks">感谢微博@大大陈屋子 和酷安网友Soomy提供的部分图标设计\n感谢网友们的测试和建议\n感谢MingQQ的开发者和将来参与开源维护的各位</string>
+    <string name="thanks">感谢微博@MakicLin费浩林 提供最新的图标设计\n感谢微博@某烧饼 对滑动返回和translucent bar的建议与指导\n感谢微博@大大陈屋子 和酷安网友Soomy提供的部分图标设计\n感谢网友们的测试和建议\n感谢MingQQ的开发者和将来参与开源维护的各位</string>
     <string name="title_activity_opensource">OpensourceActivity</string>
 
 </resources>

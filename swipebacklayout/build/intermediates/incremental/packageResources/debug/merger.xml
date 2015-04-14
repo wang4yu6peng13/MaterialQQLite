@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="D:\Program Files\Android\Project\MaterialQQLite\swipebacklayout\src\main\res"><file name="ic_launcher" path="D:\Program Files\Android\Project\MaterialQQLite\swipebacklayout\src\main\res\drawable-hdpi\ic_launcher.png" qualifiers="hdpi-v4" type="drawable"/><file name="ic_launcher" path="D:\Program Files\Android\Project\MaterialQQLite\swipebacklayout\src\main\res\drawable-mdpi\ic_launcher.png" qualifiers="mdpi-v4" type="drawable"/><file name="ic_launcher" path="D:\Program Files\Android\Project\MaterialQQLite\swipebacklayout\src\main\res\drawable-xhdpi\ic_launcher.png" qualifiers="xhdpi-v4" type="drawable"/><file name="shadow_bottom" path="D:\Program Files\Android\Project\MaterialQQLite\swipebacklayout\src\main\res\drawable-xhdpi\shadow_bottom.png" qualifiers="xhdpi-v4" type="drawable"/><file name="shadow_left" path="D:\Program Files\Android\Project\MaterialQQLite\swipebacklayout\src\main\res\drawable-xhdpi\shadow_left.png" qualifiers="xhdpi-v4" type="drawable"/><file name="shadow_right" path="D:\Program Files\Android\Project\MaterialQQLite\swipebacklayout\src\main\res\drawable-xhdpi\shadow_right.png" qualifiers="xhdpi-v4" type="drawable"/><file name="ic_launcher" path="D:\Program Files\Android\Project\MaterialQQLite\swipebacklayout\src\main\res\drawable-xxhdpi\ic_launcher.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="swipeback_layout" path="D:\Program Files\Android\Project\MaterialQQLite\swipebacklayout\src\main\res\layout\swipeback_layout.xml" qualifiers="" type="layout"/><file path="D:\Program Files\Android\Project\MaterialQQLite\swipebacklayout\src\main\res\values\attrs.xml" qualifiers=""><declare-styleable name="SwipeBackLayout">
+        <attr format="dimension" name="edge_size"/>
+        <attr name="edge_flag">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+            <enum name="bottom" value="2"/>
+            <enum name="all" value="3"/>
+        </attr>
+        <attr format="reference" name="shadow_left"/>
+        <attr format="reference" name="shadow_right"/>
+        <attr format="reference" name="shadow_bottom"/>
+    </declare-styleable><attr format="reference" name="SwipeBackLayoutStyle"/></file><file path="D:\Program Files\Android\Project\MaterialQQLite\swipebacklayout\src\main\res\values\styles.xml" qualifiers=""><style name="SwipeBackLayout">
+        <item name="edge_size">50dip</item>
+        <item name="shadow_left">@drawable/shadow_left</item>
+        <item name="shadow_right">@drawable/shadow_right</item>
+        <item name="shadow_bottom">@drawable/shadow_bottom</item>
+    </style></file></source><source path="D:\Program Files\Android\Project\MaterialQQLite\swipebacklayout\build\generated\res\rs\debug"/><source path="D:\Program Files\Android\Project\MaterialQQLite\swipebacklayout\build\generated\res\generated\debug"/></dataSet><dataSet config="debug"><source path="D:\Program Files\Android\Project\MaterialQQLite\swipebacklayout\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="SwipeBackLayout"><attr format="dimension" name="edge_size"/><attr name="edge_flag"><enum name="left" value="0"/><enum name="right" value="1"/><enum name="bottom" value="2"/><enum name="all" value="3"/></attr><attr format="reference" name="shadow_left"/><attr format="reference" name="shadow_right"/><attr format="reference" name="shadow_bottom"/></declare-styleable></configuration></mergedItems></merger>

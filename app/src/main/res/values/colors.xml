@@ -31,4 +31,6 @@
     <color name="color_primary_text">#212121</color>
     <color name="color_secondary_text">#727272</color>
     <color name="color_divider">#b6b6b6</color>
+
+    <color name="color_background">#eeeeee</color>
 </resources>

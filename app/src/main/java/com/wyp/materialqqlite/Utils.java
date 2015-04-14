@@ -46,7 +46,7 @@ public class Utils {
 		out.close();
 		return data;
 	} 
-	
+/*
 	public static String GetBetweenString(String str, String strStart,
 			String strEnd) {
 		int nPos1 = str.indexOf(strStart);
@@ -58,7 +58,19 @@ public class Utils {
 		}
 		return str;
 	}
-	
+*/
+    public static String GetBetweenString(String str, String strStart,
+                                          String strEnd) {
+        int nPos1 = str.indexOf(strStart);
+        if (nPos1 != -1) {
+            nPos1 += strStart.length();
+            int nPos2 = str.indexOf(strEnd, nPos1);
+            if (nPos2 != -1) {
+                return str.substring(nPos1, nPos2);
+            }
+        }
+        return str;
+    }
 	// 合并两个byte数组  
     public static byte[] byteMerger(byte[] byte_1, byte[] byte_2){  
         byte[] byte_3 = new byte[byte_1.length+byte_2.length];  

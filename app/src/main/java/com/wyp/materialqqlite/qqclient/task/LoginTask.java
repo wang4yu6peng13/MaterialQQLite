@@ -71,8 +71,17 @@ public class LoginTask extends HttpTask {
 			boolean bRet;
 			
 			if (Utils.isEmptyStr(m_QQUser.m_strVerifyCode)) {	// 验证码为空
-				bRet = QQProtocol.checkVerifyCode(m_httpClient,	// 检测是否需要输入验证码
-					m_QQUser.m_strQQNum, QQProtocol.WEBQQ_APP_ID, m_QQUser.m_VerifyCodeInfo);
+			//	bRet = QQProtocol.checkVerifyCode(m_httpClient,	// 检测是否需要输入验证码
+			//		m_QQUser.m_strQQNum, QQProtocol.WEBQQ_APP_ID, m_QQUser.m_VerifyCodeInfo);
+
+                // 获取登录信令
+                m_QQUser.m_VerifyCodeInfo.m_strLoginSig = QQProtocol.getLoginSig(
+                        m_httpClient, QQProtocol.WEBQQ_APP_ID);
+
+                // 检测是否需要输入验证码
+                bRet = QQProtocol.checkVerifyCode(m_httpClient,	m_QQUser.m_strQQNum,
+                        QQProtocol.WEBQQ_APP_ID, m_QQUser.m_VerifyCodeInfo);
+
 				if (!bRet || m_bCancel) {
 					sendLoginResultMsg(QQLoginResultCode.FAILED);
 					return;
@@ -81,8 +90,9 @@ public class LoginTask extends HttpTask {
 				if (m_QQUser.m_VerifyCodeInfo.m_nNeedVerify == 1) {	// 需要验证码
 					// 获取验证码图片
 					m_QQUser.m_VerifyCodePic = QQProtocol.getVerifyCodePic(
-							m_httpClient, QQProtocol.WEBQQ_APP_ID, 
-							m_QQUser.m_strQQNum, m_QQUser.m_VerifyCodeInfo.m_strVCType);
+							m_httpClient, QQProtocol.WEBQQ_APP_ID,
+                            m_QQUser.m_strQQNum, m_QQUser.m_VerifyCodeInfo);
+					//		m_QQUser.m_strQQNum, m_QQUser.m_VerifyCodeInfo.m_strVCType);
 					if (!bRet || m_bCancel) {
 						sendLoginResultMsg(QQLoginResultCode.FAILED);
 						return;
@@ -100,10 +110,14 @@ public class LoginTask extends HttpTask {
 				}
 			}
 
-			bRet = QQProtocol.login1(m_httpClient, m_QQUser.m_strQQNum,		// 第一次登录
-				m_QQUser.m_strQQPwd, m_QQUser.m_strVerifyCode, 
-				m_QQUser.m_VerifyCodeInfo.m_bytPtUin,
-				QQProtocol.WEBQQ_APP_ID, m_QQUser.m_LoginResult1);
+		//	bRet = QQProtocol.login1(m_httpClient, m_QQUser.m_strQQNum,		// 第一次登录
+            bRet = QQProtocol.login1(m_httpClient, m_QQUser.m_nQQUin,		// 第一次登录
+				m_QQUser.m_strQQPwd, m_QQUser.m_strVerifyCode,
+			//	m_QQUser.m_VerifyCodeInfo.m_bytPtUin,
+                m_QQUser.m_VerifyCodeInfo.m_strLoginSig,
+                m_QQUser.m_VerifyCodeInfo.m_strVerifySession,
+                m_QQUser.m_VerifyCodeInfo.m_strPtUin,
+                QQProtocol.WEBQQ_APP_ID, m_QQUser.m_LoginResult1);
 			if (!bRet || m_bCancel) {
 				m_QQUser.m_strVerifyCode = null;
 				m_QQUser.m_VerifyCodePic = null;
@@ -117,8 +131,9 @@ public class LoginTask extends HttpTask {
 			if (m_QQUser.m_LoginResult1.m_nRetCode != 0) {		// 登录失败
 				if (m_QQUser.m_LoginResult1.m_nRetCode == 4) {	// 验证码错误
 					m_QQUser.m_VerifyCodePic = QQProtocol.getVerifyCodePic(m_httpClient,	// 获取验证码图片
-							QQProtocol.WEBQQ_APP_ID, m_QQUser.m_strQQNum, 
-							m_QQUser.m_VerifyCodeInfo.m_strVCType);
+							QQProtocol.WEBQQ_APP_ID, m_QQUser.m_strQQNum,
+                            m_QQUser.m_VerifyCodeInfo);
+					//		m_QQUser.m_VerifyCodeInfo.m_strVCType);
 					if (!bRet || m_bCancel) {
 						sendLoginResultMsg(QQLoginResultCode.FAILED);
 						return;

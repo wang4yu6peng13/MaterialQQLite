@@ -88,13 +88,13 @@
     <orderEntry type="library" exported="" name="support-v4-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="android-ui-1.2" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-21.0.3" level="project" />
-    <orderEntry type="library" exported="" name="systembartint-1.0.4" level="project" />
     <orderEntry type="library" exported="" name="httpcore-4.2.4" level="project" />
     <orderEntry type="library" exported="" name="material-dialogs-0.6.2.2" level="project" />
     <orderEntry type="library" exported="" name="MaterialTabs-0.11" level="project" />
     <orderEntry type="module" module-name="switchButton" exported="" />
     <orderEntry type="module" module-name="android-PullRefreshLayout" exported="" />
     <orderEntry type="module" module-name="MaterialWidget" exported="" />
+    <orderEntry type="module" module-name="swipebacklayout" exported="" />
   </component>
 </module>
 
