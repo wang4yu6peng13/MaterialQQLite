@@ -26,9 +26,10 @@ import android.widget.Toast;
 import com.material.widget.CircularProgress;
 import com.material.widget.FloatingEditText;
 import com.material.widget.PaperButton;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
+
 import com.wyp.materialqqlite.AppData;
 import com.wyp.materialqqlite.ExitApplication;
+import com.wyp.materialqqlite.JsEngine;
 import com.wyp.materialqqlite.LoginAccountList;
 import com.wyp.materialqqlite.QQService;
 import com.wyp.materialqqlite.R;
@@ -120,6 +121,9 @@ public class LoginActivity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        JsEngine jsEngine = new JsEngine(this);
+        AppData.getAppData().setJsEngine(jsEngine);
+
         ExitApplication.getInstance().addActivity(this);
 
         sp = getSharedPreferences("theme", MODE_PRIVATE);
@@ -129,9 +133,9 @@ public class LoginActivity extends Activity implements OnClickListener {
             setTranslucentStatus(true);
         }
 
-        SystemBarTintManager tintManager = new SystemBarTintManager(this);
-        tintManager.setStatusBarTintEnabled(true);
-        tintManager.setTintAlpha(0);
+//        SystemBarTintManager tintManager = new SystemBarTintManager(this);
+//        tintManager.setStatusBarTintEnabled(true);
+//        tintManager.setTintAlpha(0);
         //   tintManager.setNavigationBarTintEnabled(true);
         //    tintManager.setStatusBarTintResource(R.color.color_text_icons);
 
@@ -147,6 +151,8 @@ public class LoginActivity extends Activity implements OnClickListener {
             String strQQPwd = bundle.getString("qq_pwd");
             m_edtNum.setText(strQQNum);
             m_edtPwd.setText(strQQPwd);
+        } else {
+
         }
     }
 

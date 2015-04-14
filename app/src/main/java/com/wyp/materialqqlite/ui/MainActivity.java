@@ -22,6 +22,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -49,7 +50,8 @@ import com.afollestad.materialdialogs.MaterialDialog;
 
 import com.afollestad.materialdialogs.ThemeSingleton;
 import com.kyleduo.switchbutton.SwitchButton;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
+
+import com.wyp.materialqqlite.AbsActivity;
 import com.wyp.materialqqlite.AppData;
 import com.wyp.materialqqlite.ExitApplication;
 import com.wyp.materialqqlite.HomeWatcher;
@@ -57,6 +59,7 @@ import com.wyp.materialqqlite.HomeWatcher.OnHomePressedListener;
 import com.wyp.materialqqlite.LoginAccountInfo;
 import com.wyp.materialqqlite.LoginAccountList;
 import com.wyp.materialqqlite.R;
+import com.wyp.materialqqlite.Utility;
 import com.wyp.materialqqlite.Utils;
 import com.wyp.materialqqlite.qqclient.QQClient;
 import com.wyp.materialqqlite.qqclient.protocol.protocoldata.BuddyInfo;
@@ -70,7 +73,7 @@ import it.neokree.materialtabs.MaterialTab;
 import it.neokree.materialtabs.MaterialTabHost;
 import it.neokree.materialtabs.MaterialTabListener;
 
-public class MainActivity extends ActionBarActivity implements MaterialTabListener, OnHomePressedListener {
+public class MainActivity extends AbsActivity implements MaterialTabListener, OnHomePressedListener {
     private ViewPager pager;
     private ViewPagerAdapter pagerAdapter;
     MaterialTabHost tabHost;
@@ -90,7 +93,7 @@ public class MainActivity extends ActionBarActivity implements MaterialTabListen
 
     private int m_nCurSelTab = 0;
     private HomeWatcher mHomeWatcher;
-    private Toolbar toolbar;
+
     private ActionBarDrawerToggle drawerToggle;
     private DrawerLayout mDrawerLayout;
     private SwitchButton mToggleSb;
@@ -105,8 +108,8 @@ public class MainActivity extends ActionBarActivity implements MaterialTabListen
 
     private SharedPreferences sp;
     private int color_theme;
-
-    private SystemBarTintManager tintManager;
+    public int statusBarHeight = 0;
+//    private SystemBarTintManager tintManager;
     private Handler m_Handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -148,22 +151,29 @@ public class MainActivity extends ActionBarActivity implements MaterialTabListen
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        /** 当SDK >= 19 且 不是Chrome浏览器 时启用透明状态栏 */
+        if (Build.VERSION.SDK_INT >= 19 && !Utility.isChrome()) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+            statusBarHeight = Utility.getStatusBarHeight(getApplicationContext());
+        }
+
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+    }
+    @Override
+    public void setUpViews() {
+        View statusHeaderView = findViewById(R.id.statusHeaderView);
+        statusHeaderView.getLayoutParams().height = statusBarHeight;
+        ViewCompat.setElevation(mToolbar, getResources().getDimension(R.dimen.toolbar_elevation));
+
         sp=getSharedPreferences("theme",MODE_PRIVATE);
-        color_theme=sp.getInt("color",-12627531);
-
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            setTranslucentStatus(true);
-        }
-
-       // SystemBarTintManager
-       tintManager = new SystemBarTintManager(this);
-        tintManager.setStatusBarTintEnabled(true);
-        tintManager.setStatusBarTintColor(color_theme);
-
+        color_theme=sp.getInt("color", -12627531);
         ThemeSingleton.get().positiveColor = color_theme;
         ThemeSingleton.get().neutralColor = color_theme;
         ThemeSingleton.get().negativeColor = color_theme;
@@ -173,19 +183,19 @@ public class MainActivity extends ActionBarActivity implements MaterialTabListen
 
         res = this.getResources();
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.inflateMenu(R.menu.menu_main);
-        setSupportActionBar(toolbar);
+
+        mToolbar.inflateMenu(R.menu.menu_main);
+        setSupportActionBar(mToolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         // 實作 drawer toggle 並放入 toolbar
-        drawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
+        drawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close);
         drawerToggle.syncState();
 
         mDrawerLayout.setDrawerListener(drawerToggle);
-        toolbar.setOnMenuItemClickListener(onMenuItemClick);
+        mToolbar.setOnMenuItemClickListener(onMenuItemClick);
 
         tabHost = (MaterialTabHost) this.findViewById(R.id.tabHost);
         pager = (ViewPager) this.findViewById(R.id.pager);
@@ -208,12 +218,13 @@ public class MainActivity extends ActionBarActivity implements MaterialTabListen
             );
         }
 
-         toolbar.setBackgroundColor(color_theme);
-         tabHost.setPrimaryColor(color_theme);
+
+        tabHost.setPrimaryColor(color_theme);
         //  getSupportActionBar().setBackgroundDrawable(new ColorDrawable(color_theme));
 
-    }
 
+
+    }
     private Toolbar.OnMenuItemClickListener onMenuItemClick = new Toolbar.OnMenuItemClickListener() {
         @Override
         public boolean onMenuItemClick(MenuItem menuItem) {
@@ -411,12 +422,14 @@ public class MainActivity extends ActionBarActivity implements MaterialTabListen
                 getSupportActionBar().setBackgroundDrawable(new ColorDrawable(color));
                 tabHost.setPrimaryColor(color);
                // tabHost.setAccentColor(color);
-                tintManager.setStatusBarTintColor(color);
+  //              tintManager.setStatusBarTintColor(color);
+                View statusHeaderView = findViewById(R.id.statusHeaderView);
+                statusHeaderView.setBackgroundColor(color);
                 ThemeSingleton.get().positiveColor = color;
                 ThemeSingleton.get().neutralColor = color;
                 ThemeSingleton.get().negativeColor = color;
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-                    getWindow().setStatusBarColor(darker);
+          //      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+          //          getWindow().setStatusBarColor(darker);
             }
         });
     }
@@ -611,18 +624,6 @@ public class MainActivity extends ActionBarActivity implements MaterialTabListen
         // do nothing
     }
 
-    @TargetApi(19)
-    private void setTranslucentStatus(boolean on) {
-        Window win = getWindow();
-        WindowManager.LayoutParams winParams = win.getAttributes();
-        final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-        if (on) {
-            winParams.flags |= bits;
-        } else {
-            winParams.flags &= ~bits;
-        }
-        win.setAttributes(winParams);
-    }
 }
 
 

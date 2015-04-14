@@ -4,11 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipToPadding="false"
-    android:fitsSystemWindows="true"
+    android:fitsSystemWindows="false"
     android:orientation="vertical"
+    android:background="@color/color_background"
     tools:context="com.wyp.materialqqlite.ui.OpensourceActivity">
+    <View
+        android:id="@+id/statusHeaderView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/color_primary"/>
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_open"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/color_primary"

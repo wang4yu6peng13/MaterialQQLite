@@ -2,10 +2,12 @@ package com.wyp.materialqqlite.ui;
 
 import com.material.widget.CircularProgress;
 import com.material.widget.FloatingEditText;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
+
+import com.wyp.materialqqlite.AbsActivity;
 import com.wyp.materialqqlite.AppData;
 import com.wyp.materialqqlite.LoginAccountList;
 import com.wyp.materialqqlite.R;
+import com.wyp.materialqqlite.Utility;
 import com.wyp.materialqqlite.qqclient.QQClient;
 import com.wyp.materialqqlite.qqclient.protocol.protocoldata.QQCallBackMsg;
 import com.wyp.materialqqlite.qqclient.protocol.protocoldata.QQLoginResultCode;
@@ -16,10 +18,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -37,17 +41,17 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class VerifyCodeActivity extends ActionBarActivity
-	 {
+public class VerifyCodeActivity extends AbsActivity{
 	//private TextView m_txtCancel;
 	//private Button m_btnFinish;
 	private ImageView m_imgVC;
 	private CircularProgress m_prgLogining;
 	private FloatingEditText m_edtVC;
 	private QQClient m_QQClient;
-    private Toolbar toolbar;
+
          private SharedPreferences sp;
          private int color_theme;
+    public int statusBarHeight = 0;
 
 	private Handler m_Handler = new Handler() {
 		@Override
@@ -102,22 +106,33 @@ public class VerifyCodeActivity extends ActionBarActivity
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+        /** 当SDK >= 19 且 不是Chrome浏览器 时启用透明状态栏 */
+        if (Build.VERSION.SDK_INT >= 19 && !Utility.isChrome()) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+            statusBarHeight = Utility.getStatusBarHeight(getApplicationContext());
+        }
+
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+        }
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_verifycode);
 
+
+	}
+
+    @Override
+    public void setUpViews() {
+        View statusHeaderView = findViewById(R.id.statusHeaderView);
+        statusHeaderView.getLayoutParams().height = statusBarHeight;
+        ViewCompat.setElevation(mToolbar, getResources().getDimension(R.dimen.toolbar_elevation));
         sp=getSharedPreferences("theme",MODE_PRIVATE);
         color_theme=sp.getInt("color",-12627531);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            setTranslucentStatus(true);
-        }
 
-        SystemBarTintManager tintManager = new SystemBarTintManager(this);
-        tintManager.setStatusBarTintEnabled(true);
-        tintManager.setStatusBarTintColor(color_theme);
-		initView();
-	}
-	
+        initView();
+    }
+
 	private void initView() {
 		m_QQClient = AppData.getAppData().getQQClient();
 		m_QQClient.setCallBackHandler(m_Handler);
@@ -128,9 +143,7 @@ public class VerifyCodeActivity extends ActionBarActivity
 		m_prgLogining = (CircularProgress)findViewById(R.id.vc_prgLogining);
 		m_edtVC = (FloatingEditText)findViewById(R.id.vc_edtVC);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar_verifycode);
 
-        toolbar.setBackgroundColor(color_theme);
         m_edtVC.setNormalColor(color_theme);
         m_edtVC.setHighlightedColor(color_theme);
         m_prgLogining.setColor(color_theme);
@@ -143,13 +156,13 @@ public class VerifyCodeActivity extends ActionBarActivity
 		Bitmap bmp = BitmapFactory.decodeByteArray(bytData, 0, bytData.length);
 		m_imgVC.setImageBitmap(bmp);
 
-        toolbar.setNavigationIcon(R.drawable.qqicon);
-        toolbar.setTitle(getString(R.string.enter_verifycode));
-        toolbar.inflateMenu(R.menu.menu_ok);
+        mToolbar.setNavigationIcon(R.drawable.qqicon);
 
-        setSupportActionBar(toolbar);
-        toolbar.setOnMenuItemClickListener(onMenuItemClick);
-toolbar.setNavigationOnClickListener(new OnClickListener() {
+        mToolbar.inflateMenu(R.menu.menu_ok);
+
+        setSupportActionBar(mToolbar);
+        mToolbar.setOnMenuItemClickListener(onMenuItemClick);
+        mToolbar.setNavigationOnClickListener(new OnClickListener() {
     @Override
     public void onClick(View v) {
         m_QQClient.setCallBackHandler(null);
@@ -185,58 +198,5 @@ toolbar.setNavigationOnClickListener(new OnClickListener() {
         return true;
     }
 
-         @TargetApi(19)
-         private void setTranslucentStatus(boolean on) {
-             Window win = getWindow();
-             WindowManager.LayoutParams winParams = win.getAttributes();
-             final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-             if (on) {
-                 winParams.flags |= bits;
-             } else {
-                 winParams.flags &= ~bits;
-             }
-             win.setAttributes(winParams);
-         }
-/*	@Override
-	public void afterTextChanged(Editable arg0) {
-		// TODO Auto-generated method stub
-		
-	}
 
-	@Override
-	public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
-			int arg3) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
-		// TODO Auto-generated method stub
-		if (m_edtVC.getText().length() >= 4)
-			//m_btnFinish.setEnabled(true);
-		else
-			//m_btnFinish.setEnabled(false);
-	}
-
-	@Override
-	public void onClick(View view) {
-		// TODO Auto-generated method stub
-		switch (view.getId()) {
-		case R.id.vc_txtCancel:	// “取消”
-			m_QQClient.setCallBackHandler(null);
-			startActivity(new Intent(VerifyCodeActivity.this, LoginActivity.class));
-			finish();
-			break;
-			
-		case R.id.vc_btnFinish:	// “完成”按钮
-			String strVC = m_edtVC.getText().toString();
-			if (strVC.length() < 4)
-				return;
-			m_prgLogining.setVisibility(View.VISIBLE);
-			m_QQClient.setVerifyCode(strVC);
-			m_QQClient.login();
-			break;
-		}
-	}*/
 }

@@ -8,6 +8,7 @@ import android.os.Message;
 import android.widget.Toast;
 
 import com.wyp.materialqqlite.AppData;
+import com.wyp.materialqqlite.JsEngine;
 import com.wyp.materialqqlite.LoginAccountInfo;
 import com.wyp.materialqqlite.LoginAccountList;
 import com.wyp.materialqqlite.QQService;
@@ -78,6 +79,9 @@ public class SplashActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        JsEngine jsEngine = new JsEngine(this);
+        AppData.getAppData().setJsEngine(jsEngine);
 
         m_QQClient = AppData.getAppData().getQQClient();
         m_accountList = AppData.getAppData().getLoginAccountList();

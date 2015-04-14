@@ -5,17 +5,18 @@ import java.util.List;
 
 import com.baoyz.widget.PullRefreshLayout;
 
-import com.readystatesoftware.systembartint.SystemBarTintManager;
+import com.wyp.materialqqlite.AbsActivitySwipe;
 import com.wyp.materialqqlite.AppData;
 import com.wyp.materialqqlite.BubbleInfo;
 import com.wyp.materialqqlite.BubbleManager;
 import com.wyp.materialqqlite.FaceInfo;
 import com.wyp.materialqqlite.FaceList;
+import com.wyp.materialqqlite.FullScreenKeyboradBug;
 import com.wyp.materialqqlite.HomeWatcher;
 import com.wyp.materialqqlite.HomeWatcher.OnHomePressedListener;
+import com.wyp.materialqqlite.MySwipeBackActivity;
 import com.wyp.materialqqlite.R;
-import com.wyp.materialqqlite.SwipeBackActivity;
-import com.wyp.materialqqlite.SwipeBackLayout;
+import com.wyp.materialqqlite.Utility;
 import com.wyp.materialqqlite.Utils;
 import com.wyp.materialqqlite.qqclient.QQClient;
 import com.wyp.materialqqlite.qqclient.QQUtils;
@@ -35,8 +36,6 @@ import com.wyp.materialqqlite.qqclient.protocol.protocoldata.SessMessage;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -46,10 +45,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.SpannableString;
 import android.text.style.ImageSpan;
@@ -71,9 +69,11 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.RelativeLayout.LayoutParams;
-import android.widget.TextView;
 
-public class ChatActivity extends SwipeBackActivity
+import me.imid.swipebacklayout.lib.SwipeBackLayout;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
+
+public class ChatActivity extends AbsActivitySwipe
         implements OnClickListener, OnItemClickListener,
         OnPageChangeListener, OnHomePressedListener {
     public static final int IS_BUDDY = 0;		// 好友聊天窗口
@@ -127,6 +127,7 @@ public class ChatActivity extends SwipeBackActivity
     private SharedPreferences sp;
     private int color_theme;
 
+    public int statusBarHeight = 0;
 
     private Handler m_Handler = new Handler() {
         @Override
@@ -299,26 +300,35 @@ public class ChatActivity extends SwipeBackActivity
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        /** 当SDK >= 19 且 不是Chrome浏览器 时启用透明状态栏 */
+        if (Build.VERSION.SDK_INT >= 19 && !Utility.isChrome()) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+            statusBarHeight = Utility.getStatusBarHeight(getApplicationContext());
+        }
+
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+
+    }
+    @Override
+    public void setUpViews() {
+        FullScreenKeyboradBug.assistActivity(this);
+        View statusHeaderView = findViewById(R.id.statusHeaderView);
+        statusHeaderView.getLayoutParams().height = statusBarHeight;
+        ViewCompat.setElevation(toolbar, getResources().getDimension(R.dimen.toolbar_elevation));
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-
 
         sp=getSharedPreferences("theme",MODE_PRIVATE);
         color_theme=sp.getInt("color",-12627531);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            setTranslucentStatus(true);
-        }
-
-        SystemBarTintManager tintManager = new SystemBarTintManager(this);
-        tintManager.setStatusBarTintEnabled(true);
-        tintManager.setStatusBarTintColor(color_theme);
         initData();		// 初始化数据
         initView();		// 初始化视图
     }
-
     @Override
     protected void onResume() {
         super.onResume();

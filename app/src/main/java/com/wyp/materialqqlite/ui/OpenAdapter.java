@@ -26,14 +26,13 @@ public class OpenAdapter extends BaseAdapter {
         open_list.add("switchButton");
         open_list.add("MaterialWidget");
         open_list.add("android-PullRefreshLayout");
-        open_list.add("systembartint");
-        open_list.add("SlidingFinish");
+        open_list.add("SwipeBackLayout");
         open_list.add(context.getResources().getString(R.string.app_name));
 
     }
     @Override
     public int getCount() {
-        return 9;// open_list.size();  //条目数量
+        return 8;// open_list.size();  //条目数量
     }
 
     @Override
@@ -74,12 +73,9 @@ public class OpenAdapter extends BaseAdapter {
                 link.setText("https://github.com/baoyongzhang/android-PullRefreshLayout");
                 break;
             case 6:
-                link.setText("https://github.com/jgilfelt/SystemBarTint");
+                link.setText("https://github.com/ikew0ng/SwipeBackLayout");
                 break;
             case 7:
-                link.setText("https://github.com/xiaanming/SlidingFinish");
-                break;
-            case 8:
                 link.setText("https://github.com/wang4yu6peng13/MaterialQQLite");
                 break;
         }

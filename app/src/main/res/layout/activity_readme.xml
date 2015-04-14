@@ -3,12 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipToPadding="false"
-    android:fitsSystemWindows="true"
     android:orientation="vertical"
+    android:fitsSystemWindows="false"
     tools:context="com.wyp.materialqqlite.ui.ReadmeActivity">
+    <View
+        android:id="@+id/statusHeaderView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/color_primary"/>
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_readme"
+        android:id="@+id/toolbar"
         
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"

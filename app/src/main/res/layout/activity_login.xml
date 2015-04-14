@@ -39,6 +39,7 @@
             <com.material.widget.FloatingEditText
                 android:id="@+id/login_edtNum"
                 style="@style/LoginEditText"
+                android:inputType="number"
                 android:hint="@string/idtxthint"
  />
             <!--
