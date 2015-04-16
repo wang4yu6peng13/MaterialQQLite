@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MaterialQQ Lite</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="qqservice_init_err">初始化 QQService 失敗！</string>
+    <string name="idtxthint">QQ號碼（暫不支援郵箱地址）</string>
+    <string name="pwdtxthint">密碼</string>
+    <string name="loginbtntext">登錄</string>
+    <string name="forgot_pwd"><u>忘記密碼？</u></string>
+    <string name="new_user">新用戶</string>
+    <string name="loading">登錄中</string>
+    <string name="login_failed">登錄失敗！</string>
+    <string name="id_or_pwd_err">帳號或密碼錯誤，請重新輸入。</string>
+    <string name="enter_id">請輸入帳號</string>
+    <string name="enter_pwd">請輸入密碼</string>
+    <string name="enter_id_toolong">輸入的帳號過長，請檢查后重新鍵入。</string>
+    <string name="cancel">取消</string>
+    <string name="enter_verifycode">輸入驗證碼</string>
+    <string name="finish">完成</string>
+    <string name="change"><u>看不清？換一張</u></string>
+    <string name="vc_tips">QQ 安全中心溫馨提示：該帳號存在安全風險，爲了您的帳戶安全，請您填寫驗證碼。</string>
+    <string name="vc_err">驗證碼錯誤，請重新輸入。</string>
+    <string name="exitdlg1_exit">退出 QQ</string>
+    <string name="exitdlg2_exit">退出</string>
+    <string name="exitdlg2_confirm">你確認要退出 QQ？</string>
+    <string name="exitqqapp">確認退出 MatrialQQ Lite？</string>
+    <string name="exitdlg2_stillrecvmsg">退出後仍繼續接收訊息通知</string>
+    <string name="exitdlg2_cancel">取消</string>
+    <string name="exitdlg2_ok">確認</string>
+    <string name="exit_qq">退出 MaterialQQ Lite</string>
+    <string name="exit_account">登出帳戶</string>
+    <string name="msg">訊息</string>
+    <string name="send">發送</string>
+    <string name="search">搜尋</string>
+    <string name="contact">聯絡人</string>
+    <string name="group">群組</string>
+    <string name="contacts">通訊錄</string>
+    <string name="discussion">討論組</string>
+    <string name="living_services">生活服務</string>
+    <string name="buddyteam">好友分組</string>
+    <string name="manage">管理</string>
+    <string name="team">分組</string>
+    <string name="all">全部</string>
+    <string name="dynamic">動態</string>
+    <string name="setting">設置</string>
+    <string name="online">在線</string>
+    <string name="hidden">隱身</string>
+    <string name="confirm">確認</string>
+    <string name="exit_cur_account">是否登出當前帳戶？</string>
+    <string name="ok">確認</string>
+    <string name="switch_user_bubble">切換用戶氣泡圖像：</string>
+    <string name="bgrun">Material QQ 正在後臺運行...</string>
+    <string name="nonewmsg">暫時沒有新訊息</string>
+    <string name="newmsg_1">你有</string>
+    <string name="newmsg_2">條新訊息</string>
+    <string name="drawer_open">打開菜單</string>
+    <string name="drawer_close">關閉菜單</string>
+    <string name="aboutandfeedback">關於與反饋</string>
+    <string name="qq_Status">隱身/在線</string>
+
+    <string name="color_chooser">主題顏色</string>
+    <string name="app_name_beta">MaterialQQ Lite Beta</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="readme">重要說明</string>
+    <string name="opensource">開源項目</string>
+    <string name="developers">開發者與致謝</string>
+    <string name="crashlog">崩潰記錄</string>
+    <string name="title_activity_readme">ReadmeActivity</string>
+    <string name="title_activity_developer">DeveloperActivity</string>
+    <string name="thanks">感谢微博@MakicLin费浩林 提供最新的图标设计\n感谢微博@某烧饼 对滑动返回和translucent bar的建议与指导\n感谢微博@大大陈屋子 和酷安网友Soomy提供的部分图标设计\n感谢网友们的测试和建议\n感谢MingQQ的开发者和将来参与开源维护的各位</string>
+    <string name="title_activity_opensource">OpensourceActivity</string>
+
+</resources>
