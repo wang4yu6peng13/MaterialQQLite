@@ -17,7 +17,7 @@ android {
     defaultConfig {
         applicationId "com.wyp.materialqqlite"
         minSdkVersion 14
-        targetSdkVersion 19
+        targetSdkVersion 21
         versionCode 3
         versionName "0.3.1beta"
         signingConfig signingConfigs.signingconfig

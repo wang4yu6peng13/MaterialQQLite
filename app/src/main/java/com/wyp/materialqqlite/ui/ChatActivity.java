@@ -1,4 +1,5 @@
 package com.wyp.materialqqlite.ui;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,9 +15,7 @@ import com.wyp.materialqqlite.FaceList;
 import com.wyp.materialqqlite.FullScreenKeyboradBug;
 import com.wyp.materialqqlite.HomeWatcher;
 import com.wyp.materialqqlite.HomeWatcher.OnHomePressedListener;
-import com.wyp.materialqqlite.MySwipeBackActivity;
 import com.wyp.materialqqlite.R;
-import com.wyp.materialqqlite.Utility;
 import com.wyp.materialqqlite.Utils;
 import com.wyp.materialqqlite.qqclient.QQClient;
 import com.wyp.materialqqlite.qqclient.QQUtils;
@@ -41,7 +40,6 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -69,9 +67,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.RelativeLayout.LayoutParams;
-
-import me.imid.swipebacklayout.lib.SwipeBackLayout;
-import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 
 public class ChatActivity extends AbsActivitySwipe
         implements OnClickListener, OnItemClickListener,
@@ -126,8 +121,6 @@ public class ChatActivity extends AbsActivitySwipe
     private LinearLayout chat_inputbar;
     private SharedPreferences sp;
     private int color_theme;
-
-    public int statusBarHeight = 0;
 
     private Handler m_Handler = new Handler() {
         @Override
@@ -300,35 +293,24 @@ public class ChatActivity extends AbsActivitySwipe
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        /** 当SDK >= 19 且 不是Chrome浏览器 时启用透明状态栏 */
-        if (Build.VERSION.SDK_INT >= 19 && !Utility.isChrome()) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-            statusBarHeight = Utility.getStatusBarHeight(getApplicationContext());
-        }
-
-        if (Build.VERSION.SDK_INT >= 21) {
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-        }
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
-
     }
+
     @Override
     public void setUpViews() {
         FullScreenKeyboradBug.assistActivity(this);
-        View statusHeaderView = findViewById(R.id.statusHeaderView);
-        statusHeaderView.getLayoutParams().height = statusBarHeight;
         ViewCompat.setElevation(toolbar, getResources().getDimension(R.dimen.toolbar_elevation));
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-        sp=getSharedPreferences("theme",MODE_PRIVATE);
-        color_theme=sp.getInt("color",-12627531);
+        sp = getSharedPreferences("theme", MODE_PRIVATE);
+        color_theme = sp.getInt("color", -12627531);
 
         initData();		// 初始化数据
         initView();		// 初始化视图
     }
+
     @Override
     protected void onResume() {
         super.onResume();

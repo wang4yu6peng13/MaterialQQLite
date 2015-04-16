@@ -1,20 +1,17 @@
-
 package com.wyp.materialqqlite;
 
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
 import me.imid.swipebacklayout.lib.SwipeBackLayout;
 
-public abstract class AbsActivitySwipe  extends MySwipeBackActivity {
+public abstract class AbsActivitySwipe extends MySwipeBackActivity {
 
     protected Toolbar toolbar;
     protected ActionBar mActionBar;
@@ -33,10 +30,9 @@ public abstract class AbsActivitySwipe  extends MySwipeBackActivity {
         }
 
         if (Build.VERSION.SDK_INT >= 21) {
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
+	        // 如果启用此选项在 Lollipop 下状态栏将完全透明
+	        // getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
-
-
 
         super.onCreate(savedInstanceState);
     }
@@ -46,8 +42,8 @@ public abstract class AbsActivitySwipe  extends MySwipeBackActivity {
     @Override
     public void setContentView(@LayoutRes int layoutResId) {
         super.setContentView(layoutResId);
-        sp=getSharedPreferences("theme",MODE_PRIVATE);
-        color_theme=sp.getInt("color", -12627531);
+        sp = getSharedPreferences("theme",MODE_PRIVATE);
+        color_theme = sp.getInt("color", -12627531);
         try {
             View statusHeaderView = findViewById(R.id.statusHeaderView);
             statusHeaderView.setBackgroundColor(color_theme);
@@ -66,7 +62,6 @@ public abstract class AbsActivitySwipe  extends MySwipeBackActivity {
 
         try {
             mSwipeBackLayout = getSwipeBackLayout();
-
             mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT );
             mSwipeBackLayout.setEnableGesture( true);
         } catch (Exception e) {
@@ -88,7 +83,7 @@ public abstract class AbsActivitySwipe  extends MySwipeBackActivity {
 
     @Override
     public void onBackPressed() {
-        if (mSwipeBackLayout != null ) {
+        if (mSwipeBackLayout != null) {
             scrollToFinishActivity();
         } else {
             super.onBackPressed();

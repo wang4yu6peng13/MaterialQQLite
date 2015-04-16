@@ -1,8 +1,6 @@
-
 package com.wyp.materialqqlite;
 
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -12,8 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-
-
 public abstract class AbsActivity extends ActionBarActivity {
 
     protected Toolbar mToolbar;
@@ -22,6 +18,7 @@ public abstract class AbsActivity extends ActionBarActivity {
     protected int statusBarHeight = 0;
     protected SharedPreferences sp;
     protected int color_theme;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         /** Set up translucent status bar */
@@ -31,9 +28,9 @@ public abstract class AbsActivity extends ActionBarActivity {
         }
 
         if (Build.VERSION.SDK_INT >= 21) {
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
+	        // 如果启用此选项在 Lollipop 下状态栏将完全透明
+            // getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
-
 
         super.onCreate(savedInstanceState);
     }
@@ -43,8 +40,8 @@ public abstract class AbsActivity extends ActionBarActivity {
     @Override
     public void setContentView(@LayoutRes int layoutResId) {
         super.setContentView(layoutResId);
-        sp=getSharedPreferences("theme",MODE_PRIVATE);
-        color_theme=sp.getInt("color", -12627531);
+        sp = getSharedPreferences("theme", MODE_PRIVATE);
+        color_theme = sp.getInt("color", -12627531);
         try {
             View statusHeaderView = findViewById(R.id.statusHeaderView);
             statusHeaderView.setBackgroundColor(color_theme);
@@ -55,9 +52,7 @@ public abstract class AbsActivity extends ActionBarActivity {
 
         try {
             mToolbar = (Toolbar) findViewById(R.id.toolbar);
-
-
-             mToolbar.setBackgroundColor(color_theme);
+            mToolbar.setBackgroundColor(color_theme);
             setSupportActionBar(mToolbar);
         } catch (Exception e) {
 
